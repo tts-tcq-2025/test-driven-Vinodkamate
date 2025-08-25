@@ -133,6 +133,7 @@ Feature: String Calculator
     Then the result should be 3
 
 ## Tabular Form
+
 	| Scenario Description                                   | Input                    | Expected Output / Exception Message                |
 |--------------------------------------------------------|--------------------------|----------------------------------------------------|
 | Empty string returns 0                                 | `""`                     | `0`                                                |
