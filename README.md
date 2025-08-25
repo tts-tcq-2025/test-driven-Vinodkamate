@@ -16,7 +16,7 @@ the first line is optional. all existing scenarios should still be supported
 - Numbers bigger than 1000 should be ignored, so adding 2 + 1001 = 2
 - Delimiters can be of any length with the following format: “//[delimiter]\n” for example: “//[***]\n1***2***3” should return 6
 
-##Test Specifications for StringCalculator
+## Test Specifications for StringCalculator
 
 Empty String Returns 0
 
@@ -74,7 +74,7 @@ Input: "1,\n"
 Output: (Not required to handle, just clarified as invalid)
 
 
-##In Gherkin language
+## In Gherkin language
 Feature: String Calculator
 
   Scenario: Empty string returns 0
@@ -132,7 +132,7 @@ Feature: String Calculator
     When I call Add
     Then the result should be 3
 
-##Tabular Form
+## Tabular Form
 	| Scenario Description                                   | Input                    | Expected Output / Exception Message                |
 |--------------------------------------------------------|--------------------------|----------------------------------------------------|
 | Empty string returns 0                                 | `""`                     | `0`                                                |
