@@ -134,7 +134,7 @@ Feature: String Calculator
 
 ## Tabular Form
 
-	| Scenario Description                                   | Input                    | Expected Output / Exception Message                |
+**	| Scenario Description                                   | Input                    | Expected Output / Exception Message                |
 |--------------------------------------------------------|--------------------------|----------------------------------------------------|
 | Empty string returns 0                                 | `""`                     | `0`                                                |
 | Single number returns its value                        | `"1"`                    | `1`                                                |
@@ -146,7 +146,7 @@ Feature: String Calculator
 | Negative number throws exception (single negative)     | `"1,-2,3"`               | Exception: `negatives not allowed: -2`             |
 | Negative numbers throw exception (multiple negatives)  | `"1,-2,-3"`              | Exception: `negatives not allowed: -2, -3`         |
 | Numbers greater than 1000 are ignored                  | `"2,1001"`               | `2`                                                |
-| Delimiter any length with numbers >1000                | `"//[***]\n1***2***1001"`| `3`                                                |
+| Delimiter any length with numbers >1000                | `"//[***]\n1***2***1001"`| `3`                                                |**
 
 ## Tasks
 
