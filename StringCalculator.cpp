@@ -3,15 +3,37 @@
 #include <vector>
 #include <algorithm>
 #include <stdexcept>
+#include <cstdlib>
+#include <cstdio>
+
+namespace {
+    void ReplaceAll(std::string& str, const std::string& from, const std::string& to) {
+        size_t pos = 0;
+        while ((pos = str.find(from, pos)) != std::string::npos) {
+            str.replace(pos, from.length(), to);
+            pos += to.length();
+        }
+    }
+    void ReplaceAllChars(std::string& str, const std::string& chars, char to) {
+        for (char c : chars) std::replace(str.begin(), str.end(), c, to);
+    }
+    std::string JoinNegatives(const std::vector<int>& negatives) {
+        std::string msg = "negatives not allowed: ";
+        char buf[32];
+        for (size_t i = 0; i < negatives.size(); ++i) {
+            std::sprintf(buf, "%d", negatives[i]);
+            msg += buf;
+            if (i + 1 < negatives.size()) msg += ", ";
+        }
+        return msg;
+    }
+}
 
 int StringCalculator::Add(const std::string& numbers) {
     if (numbers.empty()) return 0;
-
     std::string delimiters = ",\n";
     std::string nums = numbers;
     std::vector<std::string> customDelims;
-
-    // Handle custom delimiter
     if (nums.rfind("//", 0) == 0) {
         size_t delimEnd = nums.find('\n');
         if (nums[2] == '[') {
@@ -28,38 +50,18 @@ int StringCalculator::Add(const std::string& numbers) {
         }
         nums = nums.substr(delimEnd + 1);
     }
-
-    // Replace all custom delimiters with ','
-    for (const auto& d : customDelims) {
-        size_t pos = 0;
-        while ((pos = nums.find(d, pos)) != std::string::npos) {
-            nums.replace(pos, d.length(), ",");
-            pos += 1;
-        }
-    }
-    // Replace default delimiters with ','
-    for (char d : delimiters) {
-        std::replace(nums.begin(), nums.end(), d, ',');
-    }
-
+    for (const auto& d : customDelims) ReplaceAll(nums, d, ",");
+    ReplaceAllChars(nums, delimiters, ',');
     std::vector<int> negatives;
     int sum = 0;
     std::stringstream ss(nums);
     std::string token;
     while (std::getline(ss, token, ',')) {
         if (token.empty()) continue;
-        int n = std::stoi(token);
+        int n = std::atoi(token.c_str());
         if (n < 0) negatives.push_back(n);
         if (n <= 1000) sum += n;
     }
-    if (!negatives.empty()) {
-        std::string msg = "negatives not allowed: ";
-        for (size_t i = 0; i < negatives.size(); ++i) {
-            msg += std::to_string(negatives[i]);
-            if (i + 1 < negatives.size()) msg += ", ";
-        }
-        throw std::runtime_error(msg);
-    }
+    if (!negatives.empty()) throw std::runtime_error(JoinNegatives(negatives));
     return sum;
 }
-
