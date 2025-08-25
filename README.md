@@ -1,4 +1,3 @@
-<img width="161" height="49" alt="image" src="https://github.com/user-attachments/assets/34ea0619-663c-4656-a72b-c36793783f32" /># TDD Driven StringCalculator
 
 Build a StringCalculator functionality that can take up to two numbers, separated by commas, and will return their sum. 
 for example “” or “1” or “1,2” as inputs.
