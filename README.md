@@ -1,4 +1,4 @@
-# TDD Driven StringCalculator
+<img width="161" height="49" alt="image" src="https://github.com/user-attachments/assets/34ea0619-663c-4656-a72b-c36793783f32" /># TDD Driven StringCalculator
 
 Build a StringCalculator functionality that can take up to two numbers, separated by commas, and will return their sum. 
 for example “” or “1” or “1,2” as inputs.
@@ -134,19 +134,23 @@ Feature: String Calculator
 
 ## Tabular Form
 
-**	| Scenario Description                                   | Input                    | Expected Output / Exception Message                |
-|--------------------------------------------------------|--------------------------|----------------------------------------------------|
-| Empty string returns 0                                 | `""`                     | `0`                                                |
-| Single number returns its value                        | `"1"`                    | `1`                                                |
-| Two numbers, comma delimited, returns sum              | `"1,2"`                  | `3`                                                |
-| Unknown amount of numbers, comma delimited             | `"1,2,3,4"`              | `10`                                               |
-| Handles new lines between numbers                      | `"1\n2,3"`               | `6`                                                |
-| Custom single-character delimiter                      | `"//;\n1;2"`             | `3`                                                |
-| Custom delimiter of any length                         | `"//[***]\n1***2***3"`   | `6`                                                |
-| Negative number throws exception (single negative)     | `"1,-2,3"`               | Exception: `negatives not allowed: -2`             |
-| Negative numbers throw exception (multiple negatives)  | `"1,-2,-3"`              | Exception: `negatives not allowed: -2, -3`         |
-| Numbers greater than 1000 are ignored                  | `"2,1001"`               | `2`                                                |
-| Delimiter any length with numbers >1000                | `"//[***]\n1***2***1001"`| `3`                                                |**
+
+| Scenario Description                                   | Input                          | Expected Output / Exception Message                |
+|--------------------------------------------------------|--------------------------------|----------------------------------------------------|
+| Empty string returns 0                                 | ""                             | 0                                                  |
+| Single number returns its value                        | "1"                            | 1                                                  |
+| Two numbers, comma delimited, returns sum              | "1,2"                          | 3                                                  |
+| Unknown amount of numbers, comma delimited             | "1,2,3,4"                      | 10                                                 |
+| Handles new lines between numbers                      | "1\n2,3"                       | 6                                                  |
+| Custom single-character delimiter                      | "//;\n1;2"                     | 3                                                  |
+| Custom delimiter of any length                         | "//[***]\n1***2***3"           | 6                                                  |
+| Negative number throws exception (single negative)     | "1,-2,3"                       | Exception: negatives not allowed: -2               |
+| Negative numbers throw exception (multiple negatives)  | "1,-2,-3"                      | Exception: negatives not allowed: -2, -3           |
+| Numbers greater than 1000 are ignored                  | "2,1001"                       | 2                                                  |
+| Delimiter any length with numbers >1000                | "//[***]\n1***2***1001"        | 3                                                  |
+
+
+
 
 ## Tasks
 
