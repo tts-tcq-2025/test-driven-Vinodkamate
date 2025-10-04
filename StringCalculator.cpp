@@ -142,7 +142,6 @@ void StringCalculator::ValidateNumbers(const std::vector<int>& numbers) {
 std::vector<int> StringCalculator::CollectNegatives(
     const std::vector<int>& numbers) {
   std::vector<int> negatives;
-  
   std::copy_if(numbers.begin(), numbers.end(),
                std::back_inserter(negatives),
                [](int number) { return number < 0; });
