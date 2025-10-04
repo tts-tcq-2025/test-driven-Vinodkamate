@@ -2,6 +2,8 @@
 #include <string>
 #include <vector>
 
+// C++ header file for StringCalculator class
+
 class StringCalculator {
  public:
   int Add(const std::string& numbers);
