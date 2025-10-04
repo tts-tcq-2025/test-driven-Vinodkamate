@@ -1,8 +1,12 @@
 #pragma once
+
 #include <string>
 #include <vector>
 
 // C++ header file for StringCalculator class
+#ifdef __cplusplus
+extern "C++" {
+#endif
 
 class StringCalculator {
  public:
@@ -23,7 +27,10 @@ class StringCalculator {
       const std::string& numbers,
       const std::vector<std::string>& customDelimiters);
   std::vector<int> ExtractNumbers(const std::string& normalizedString);
-  void ValidateNumbers(const std::vector<int>& numbers);
-  std::vector<int> CollectNegatives(const std::vector<int>& numbers);
+  void ValidateNumbers(const std::vector<int>& numbers);  std::vector<int> CollectNegatives(const std::vector<int>& numbers);
   int CalculateSum(const std::vector<int>& numbers);
 };
+
+#ifdef __cplusplus
+}
+#endif
