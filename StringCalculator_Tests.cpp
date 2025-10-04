@@ -2,8 +2,7 @@
 #include "StringCalculator.h"
 
 namespace {
-void ExpectNegativeException(const std::string& input, const std::string& expectedMessage) 
-{
+void ExpectNegativeException(const std::string& input, const std::string& expectedMessage) {
   StringCalculator calc;
   try {
     calc.Add(input);
