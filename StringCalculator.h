@@ -27,7 +27,8 @@ class StringCalculator {
       const std::string& numbers,
       const std::vector<std::string>& customDelimiters);
   std::vector<int> ExtractNumbers(const std::string& normalizedString);
-  void ValidateNumbers(const std::vector<int>& numbers);  std::vector<int> CollectNegatives(const std::vector<int>& numbers);
+  void ValidateNumbers(const std::vector<int>& numbers);
+  std::vector<int> CollectNegatives(const std::vector<int>& numbers);
   int CalculateSum(const std::vector<int>& numbers);
 };
 
