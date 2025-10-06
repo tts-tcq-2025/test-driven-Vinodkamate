@@ -6,7 +6,7 @@
 // C++ header file for StringCalculator class
 #ifdef __cplusplus
 extern "C++" {
-#endif
+
 
 class StringCalculator {
  public:
@@ -34,4 +34,5 @@ class StringCalculator {
 
 #ifdef __cplusplus
 }
+#endif
 #endif
